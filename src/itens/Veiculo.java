@@ -1,12 +1,12 @@
 package itens;
 
-public class Carro {
+public class Veiculo {
     private String placa;
     private String modelo;
     private String cor;
     private String tipoVeiculo;
 
-    public Carro(String placa, String modelo, String cor, String tipo) {
+    public Veiculo(String placa, String modelo, String cor, String tipo) {
         this.placa = placa;
         this.modelo = modelo;
         this.cor = cor;
@@ -22,8 +22,8 @@ public class Carro {
                 '}');
     }
 
-    public boolean mesmoVeiculo(Carro outroCarro) {
-        return this.tipoVeiculo.equals(outroCarro.tipoVeiculo);
+    public boolean mesmoVeiculo(Veiculo outroVeiculo) {
+        return this.tipoVeiculo.equals(outroVeiculo.tipoVeiculo);
     }
 
     public String getTipoVeiculo() {

@@ -4,27 +4,27 @@ public class VagaEstacionamento {
     private String atribIdent;
     private String tipoVaga;
     private float valorPorHora;
-    private String status;
+    private boolean ocupada;
 
     public VagaEstacionamento(String atribIdent, String tipoVaga, float valorPorHora, String status) {
         this.atribIdent = atribIdent;
         this.tipoVaga = tipoVaga;
         this.valorPorHora = valorPorHora;
-        this.status = status;
+        this.ocupada = false;
     }
 
     public boolean ocuparVaga(String tipoVeiculo) {
-        if (status.equals("livre") && tipoVaga.equals(tipoVeiculo)) {
-                status = "ocupado";
-                return true;
+        if (!ocupada && tipoVaga.equals(tipoVeiculo)) {
+            ocupada = true;
+            return true;
         } else {
             return false;
         }
     }
 
     public float liberarVaga(float tempoHoras) {
-        if (status.equals("ocupado")) {
-            status = "livre";
+        if (ocupada) {
+            ocupada = false;
             return tempoHoras * valorPorHora;
         } else {
             return 0;
@@ -36,7 +36,7 @@ public class VagaEstacionamento {
                 "atribIdent='" + atribIdent + '\'' +
                 ", tipoVaga='" + tipoVaga + '\'' +
                 ", valorPorHora=" + valorPorHora +
-                ", status='" + status + '\'' +
+                ", status='" + ocupada + '\'' +
                 '}');
     }
 }

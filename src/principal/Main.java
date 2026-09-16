@@ -1,41 +1,41 @@
 package principal;
 
 
-import itens.Carro;
+import itens.Veiculo;
 import itens.VagaEstacionamento;
 
 public class Main {
     public static void main(String[] args) {
-        Carro carro1 = new Carro("abc", "1", "azul", "suv");
-        Carro carro2 = new Carro("def", "2", "branco", "normal");
-        Carro carro3 = new Carro("ghi", "2", "amarelo", "suv");
+        Veiculo veiculo1 = new Veiculo("abc", "1", "azul", "suv");
+        Veiculo veiculo2 = new Veiculo("def", "2", "branco", "normal");
+        Veiculo veiculo3 = new Veiculo("ghi", "2", "amarelo", "suv");
 
         System.out.println("Exibir informações: ");
-        carro1.exibirInformacoes();
+        veiculo1.exibirInformacoes();
 
         System.out.println("\nComparar tipos:");
-        if (carro1.mesmoVeiculo(carro2)) {
-            System.out.println(carro1 + " e " + carro2 + " são do mesmo tipo");
+        if (veiculo1.mesmoVeiculo(veiculo2)) {
+            System.out.println(veiculo1 + " e " + veiculo2 + " são do mesmo tipo");
         } else {
-            System.out.println(carro1 + " e " + carro2 + " não são do mesmo tipo");
+            System.out.println(veiculo1 + " e " + veiculo2 + " não são do mesmo tipo");
         }
-        if (carro1.mesmoVeiculo(carro3)) {
-            System.out.println(carro1 + " e " + carro3 + " são do mesmo tipo");
+        if (veiculo1.mesmoVeiculo(veiculo3)) {
+            System.out.println(veiculo1 + " e " + veiculo3 + " são do mesmo tipo");
         } else {
-            System.out.println(carro1 + " e " + carro3 + " não são do mesmo tipo");
+            System.out.println(veiculo1 + " e " + veiculo3 + " não são do mesmo tipo");
         }
 
         System.out.println("\nRetornar tipo veiculo:");
-        carro1.getTipoVeiculo();
+        veiculo1.getTipoVeiculo();
 
 
         System.out.println("\nAtualizar cor com parametro:");
-        carro1.setCor("roxo");
-        carro1.exibirInformacoes();
+        veiculo1.setCor("roxo");
+        veiculo1.exibirInformacoes();
 
         System.out.println("\nAtualizar cor para preta:");
-        carro1.setCor();
-        carro1.exibirInformacoes();
+        veiculo1.setCor();
+        veiculo1.exibirInformacoes();
 
         System.out.println("\n---------------------------------------\n");
 
@@ -65,6 +65,13 @@ public class Main {
         vaga2.liberarVaga(10);
         vaga2.exibirInformacoes();
 
+        System.out.println("Insatanciando um novo objeto");
+
+        System.out.println("teste 1");
+
+        Veiculo cam1 = new Veiculo("ABC", "cross", "azul", "caminhao");
+
+        veiculo1.exibirInformacoes();
 
     }
 }
